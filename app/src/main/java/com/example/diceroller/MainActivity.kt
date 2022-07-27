@@ -2,16 +2,20 @@ package com.example.diceroller
 import android.content.Context
 import android.media.MediaPlayer
 import android.os.*
+import android.view.Menu
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import kotlin.random.Random
 
+
 class MainActivity : AppCompatActivity() {
 
-    lateinit var diceImage: ImageView
+    private lateinit var diceImage: ImageView
     private lateinit var mp: MediaPlayer
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -24,10 +28,19 @@ class MainActivity : AppCompatActivity() {
         diceImage = findViewById(R.id.dice_image)
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
     private fun rollDice() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            vibrate()
+        }
         if (mp.isPlaying) mp.pause()
         else mp.start()
-        var drawableResourse = when (Random.nextInt(6) + 1){
+        val drawableResourse = when (Random.nextInt(6) + 1){
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
             3 -> R.drawable.dice_3
@@ -36,8 +49,10 @@ class MainActivity : AppCompatActivity() {
             else -> R.drawable.dice_6
         }
         diceImage.setImageResource(drawableResourse)
+
     }
 
+    @RequiresApi(Build.VERSION_CODES.Q)
     private fun vibrate(){
         val vib = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             val vibratorManager =

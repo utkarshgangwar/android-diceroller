@@ -9,7 +9,6 @@
     android:layout_gravity="center_vertical"
     tools:context=".MainActivity">
 
-
     <ImageView
         android:id="@+id/dice_image"
         android:layout_width="wrap_content"
@@ -32,5 +31,6 @@
         android:textStyle="bold"
         android:textSize="35sp"
         android:typeface="normal" />
+
 
 </LinearLayout>

@@ -3,4 +3,8 @@
     <string name="roll">Roll the dice (click here)</string>
     <string name="rolledToast">Dice Rolled!!</string>
     <string name="dice">DICE</string>
+    <string name="home">Home</string>
+    <string name="setting">Setting</string>
+    <string name="about">About</string>
+    <string name="share">Share</string>
 </resources>
