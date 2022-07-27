@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Dice Rolling Offline</string>
+    <string name="app_name">Dice Roll Offline</string>
     <string name="roll">Roll the dice (click here)</string>
     <string name="rolledToast">Dice Rolled!!</string>
     <string name="dice">DICE</string>
@@ -7,4 +7,6 @@
     <string name="setting">Setting</string>
     <string name="about">About</string>
     <string name="share">Share</string>
+    <string name="dice_roller_offline">Dice Roll Offline</string>
+    <string name="crimsoft">crimsoft</string>
 </resources>
